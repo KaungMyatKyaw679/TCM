@@ -1,0 +1,34 @@
+{% extends 'accounts/master.html' %} {% block content %}
+<!-- contact -->
+<div>
+    <h5 class="text-center">ရရှိနိုင်သော စာရေးဆရာများ၏ စာအုပ်များ</h5>
+    <hr>
+    <h6>စုစုပေါင်းစာအုပ်အရေအတွက်:
+        <div class="mx-2" style="display: inline; font-size: 23px;">{{totalbook}}</div>
+    </h6>
+    <h6>စုစုပေါင်းစာရေးဆရာအရေအတွက်:
+        <div class="mx-2" style="display: inline; font-size: 23px;">{{totalwriter}}</div>
+    </h6>
+    <div class="card card-body" style="background-color: transparent; border: 2px solid black;">
+        <table class="table table-sm">
+            <tr>
+                <th></th>
+                <th>
+                    <h4>စာရေးဆရာ</h4>
+                </th>
+                <th></th>
+                <th></th>
+            </tr>
+            {% for writer in writers %}
+            <tr>
+                <td></td>
+                <td>{{writer.name}}</td>
+                <td></td>
+                <td><a href="{% url 'book' writer.id %}" class="btn btn-success">စာအုပ်များ</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+<!-- contact -->
+{% endblock content %}

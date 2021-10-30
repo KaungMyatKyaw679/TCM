@@ -1,0 +1,14 @@
+{% extends 'accounts/master.html' %} {% block content %}
+<div style="display: flex;justify-content: space-around;flex-wrap: wrap;">{% for feed in feeds %}
+
+    <div class="card" style="width: 16.6rem;margin: 5px 0;
+    padding: 5;border: 5px solid greenyellow;">
+        <img src="/{{feed.photo}}" style="width: 16rem;">
+        <div class=" card-body ">
+            <p class="card-text " style="text-align: center; ">{{feed.content}}</p>
+            <p style="color:blue;">{{feed.created_at}}</p>
+        </div>
+    </div>
+
+    {% endfor %}</div>
+{% endblock content %}
